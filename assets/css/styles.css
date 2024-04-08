@@ -103,7 +103,7 @@ body {
 
 .promo-form .form-wrapper .promo-code-input input[type=text]:disabled {
     background: #fff;
-    color: #000;
+    color: #afafaf;
 }
 
 .promo-form .form-wrapper .game-id-input label {

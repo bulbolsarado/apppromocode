@@ -83,7 +83,7 @@ body {
 }
 
 .promo-form .form-wrapper .promo-code-input input {
-    border: 3px #6e7f8d solid;
+    border: 3px #fff solid;
 }
 
 .promo-form .form-wrapper .game-id-input input {
@@ -102,7 +102,7 @@ body {
 }
 
 .promo-form .form-wrapper .promo-code-input input[type=text]:disabled {
-    background: #6e7f8d;
+    background: #fff;
     color: #000;
 }
 

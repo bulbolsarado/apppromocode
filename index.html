@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1, minimum-scale=1，user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title>RummyTry - App Promo Code 应用促销代码</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <!-- Include necessary JS libraries -->
+    <script type="text/javascript" src="./assets/js/jianrong.js"></script>
+</head>
+
+<body>
+    <div class="header-title">
+        <img src="./assets/images/app-promo-code.png" alt="">
+        <img src="./assets/images/free-rs50-500.png" alt="free R$50-R$500">
+    </div>
+
+    <div class="promo-form">
+        <div class="form-wrapper">
+            <div class="promo-code-input">
+                <label>Promo Code:</label>
+                <input type="text" id="promoCode" placeholder="RTRYXXXXXXXX" disabled>
+            </div>
+            <div class="game-id-input">
+                <div class="input-container">
+                    <label for="gameId">Game ID:</label>
+                    <input type="text" id="gameId" placeholder="Enter your Game ID">
+                </div>
+                <span id="gameIdError" class="error-message"></span>
+            </div>
+            <img class="claimBtn" src="./assets/images/btn-claim.png" alt="CLAIM" id="claimBtn">
+        </div>
+    </div>
+
+    <div class="dlgameId">
+        <div class="rummytryimg">
+            <img src="./assets/images/download-bg.png" alt="RummyTry">
+        </div>
+        <img class="dlBtn" src="./assets/images/btn-download.png" alt="Download Game App" id="downloadBtn">
+    </div>
+
+    <div class="footernote">
+        <div class="footer-wrapper">
+            <p>Let’s reload to apply <span>Multiple Promo Code</span> Simply download our game app and enjoy <span>Daily Promo Code</span> to all members.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal-wrapper">
+            <img class="closeBtn" src="./assets/images/btn-close-modal.png">
+            <div class="modalimg">
+                <img class="congratsImg" src="./assets/images/congratulations-modal.png" alt="Congratulations">
+            </div>
+        </div>
+    </div>
+
+    <!-- Tracking script -->
+    <script>
+        // Function to generate a random promo code
+        function generatePromoCode() {
+            var promoCode = "RTRY";
+            var characters = "0123456789";
+            for (var i = 0; i < 8; i++) {
+                promoCode += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return promoCode;
+        }
+
+        // Function to validate game ID
+        function validateGameId(gameId) {
+            var gameIdRegex = /^\d{7,8}$/; // Regular expression to match 7 to 8 digits
+            return gameIdRegex.test(gameId);
+        }
+
+        // Set random promo code on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            var promoCodeInput = document.getElementById('promoCode');
+            promoCodeInput.value = generatePromoCode();
+        });
+
+        // Validate game ID when CLAIM button is clicked
+        document.getElementById('claimBtn').addEventListener('click', function() {
+            var gameIdInput = document.getElementById('gameId').value;
+            var gameIdError = document.getElementById('gameIdError');
+            if (!validateGameId(gameIdInput)) {
+                gameIdError.textContent = "Game ID must be 7 to 8 digits long and contain only numbers.";
+            } else {
+                gameIdError.textContent = "";
+                // Here you can perform any action after successful validation, like submitting the form
+                // For now, I'll just log a success message
+                console.log("Game ID validation successful.");
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listener to the download button (image)
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                // Define the APK URL
+                var apkUrl = 'https://ossyd06.downwl.com/Rummytry/RummyTry-140026-channel-68686868.apk';
+
+                // Trigger the download
+                window.location.href = apkUrl;
+            });
+        });
+
+
+        // Wait for the DOM content to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Validate game ID when CLAIM button is clicked
+            document.getElementById('claimBtn').addEventListener('click', function() {
+                var gameIdInput = document.getElementById('gameId').value;
+                var gameIdError = document.getElementById('gameIdError');
+                if (!validateGameId(gameIdInput)) {
+                    gameIdError.textContent = "Game ID must be 7 to 8 digits long and contain only numbers.";
+                } else {
+                    gameIdError.textContent = "";
+                    // Here you can perform any action after successful validation
+                    // For example, show the modal overlay
+                    showModal();
+                }
+            });
+        });
+
+        function showModal() {
+            // Display the modal overlay
+            var modalOverlay = document.querySelector('.modal-overlay');
+            modalOverlay.style.display = 'block';
+
+            // Add event listener to close the modal when close icon/image is clicked
+            var closeIcon = document.querySelector('.modal-wrapper img');
+            closeIcon.addEventListener('click', function() {
+                modalOverlay.style.display = 'none';
+            });
+        }
+
+        var _hmt = _hmt || [];
+        (function () {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?a9b8a4fa5b8e45f51da9882027b28335";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

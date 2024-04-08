@@ -16,7 +16,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: normal;
     font-style: normal;
-    height: 100%;
+    height: 100vh;
 }
 
 
@@ -119,6 +119,10 @@ body {
     align-items: center;
 }
 
+.dlgameId {
+    margin-bottom: 4rem;
+}
+
 .dlgameId .rummytryimg {
     display: flex;
     flex-direction: column;
@@ -127,6 +131,7 @@ body {
 
 .footernote {
     margin: 30px 0;
+    padding-bottom: 30px;
 }
 
 .footernote .footer-wrapper p {

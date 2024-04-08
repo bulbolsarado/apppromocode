@@ -119,9 +119,10 @@ body {
     align-items: center;
 }
 
-.dlgameId .dlBtn {
-    position: absolute;
-    bottom: 0;
+.dlgameId .rummytryimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footernote {
@@ -146,6 +147,9 @@ body {
     border-radius: 10px;
 }
 
+#downloadBtn {
+    margin-top: -130px;
+}
 #downloadBtn, #claimBtn {
     transition: transform 0.3s ease; /* Add transition effect for smooth scaling */
     cursor: pointer; /* Set cursor to pointer to indicate interactivity */
@@ -195,29 +199,23 @@ body {
 }
 
 
-@media only screen and (min-width: 319px) {
-    .dlgameId .dlBtn {
-        top: 53%;
-    }
-}
 
-@media only screen and (min-width: 375px) {
-    .dlgameId .dlBtn {
-        top: 64%;
+/* @media only screen and (max-width: 414px) {
+    #downloadBtn {
+        position: absolute;
+        bottom: 38%;
+        left: 50%;
+        transform: translateX(-50%);
     }
-}
+    
+} */
+    
 
-@media only screen and (min-width: 414px) {
-    .dlgameId .dlBtn {
-        top: 53%;
+/* @media only screen and (max-width: 750px) {
+    #downloadBtn {
+        position: absolute;
+        bottom: 28%;
+        left: 50%;
+        transform: translateX(-50%);
     }
-}
-
-@media only screen and (min-width: 1024px) {
-    .dlgameId .dlBtn {
-        top: 90%;
-    }
-    .congratsImg {
-        width:90%;
-    }
-}
+} */

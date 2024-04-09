@@ -27,11 +27,11 @@ body {
     justify-content: center;
 }
 
-.promo-form, .dlgameId, .footernote {
+.promo-form, .footernote {
     padding: 0 40px;
 }
 .header-title {
-    margin-top: 40px;
+    margin-top: 2vh;
 }
 
 .header-title img:nth-child(1) {
@@ -54,7 +54,7 @@ body {
 
 .error-message {
     color: red;
-    font-size: 14px;
+    font-size: 1rem;
     margin-top: 10px;
     font-weight: 600;
 }
@@ -250,10 +250,10 @@ body {
     .dlgameId {
         /* Adjust layout for download button on smaller screens */
         position: relative;
-        width: fit-content;
+        width: 100vw;
         text-align: center;
     }
     .rummytryimg img {
-        width: fit-content; /* Make sure the image fits within its container */
+        width: 80vw; /* Make sure the image fits within its container */
     }
 }

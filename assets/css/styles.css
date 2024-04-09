@@ -61,7 +61,7 @@ body {
 
 .promo-form {
     background: #b7a585;
-    padding: 80px 0;
+    padding: 40px 0 30px 0;
 }
 
 
@@ -126,8 +126,8 @@ body {
 }
 
 .dlgameId {
-    margin-bottom: 6rem;
-    margin-top: 3rem;
+    margin-bottom: 4.5rem;
+    margin-top: 2rem;
 }
 
 .dlgameId .rummytryimg {
@@ -144,7 +144,7 @@ body {
 .footernote .footer-wrapper p {
     color: white;
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 
@@ -172,15 +172,15 @@ body {
     transform: scale(1.1); /* Scale the button by 10% when hovered over */
 }
 
-.modal-overlay {
-    display: none; /* Initially hide the modal overlay */
+/* .modal-overlay {
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
-    z-index: 999; /* Ensure the modal overlay appears above other content */
+    background-color: rgba(0, 0, 0, 0.8); 
+    z-index: 999; 
 }
 
 .modal-wrapper {
@@ -191,13 +191,42 @@ body {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    max-width: 100%; /* Limit the maximum width of the modal */
+    max-width: 100%; 
+} */
+
+.modal-overlay {
+    display: none; /* Initially hide the modal overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Start with transparent background */
+    z-index: 999; /* Ensure the modal overlay appears above other content */
+    transition: background-color 0.3s ease; /* Add transition effect for smooth fade */
 }
 
-/* .modal-wrapper img {
-    /*max-width: 90%;  Ensure the image does not exceed the width of the modal */
-    /*height: auto;  Preserve aspect ratio */
+.modal-overlay.show {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+}
 
+.modal-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 80%; /* Limit the maximum width of the modal */
+    opacity: 0; /* Initially hide the modal */
+    transition: opacity 0.3s ease; /* Add transition effect for smooth fade */
+}
+
+.modal-overlay.show .modal-wrapper {
+    opacity: 1; /* Show the modal with fade effect */
+}
 
 .modal-wrapper img.close-icon {
     position: absolute;
@@ -213,22 +242,18 @@ body {
 
 
 
-/* @media only screen and (max-width: 414px) {
-    #downloadBtn {
-        position: absolute;
-        bottom: 38%;
-        left: 50%;
-        transform: translateX(-50%);
+@media only screen and (max-width: 768px) {
+    /* Styles for screens smaller than 768px (typically mobile devices) */
+    .modal-wrapper {
+        max-width: 90%; /* Adjust maximum width for smaller screens */
     }
-    
-} */
-    
-
-/* @media only screen and (max-width: 750px) {
-    #downloadBtn {
-        position: absolute;
-        bottom: 28%;
-        left: 50%;
-        transform: translateX(-50%);
+    .dlgameId {
+        /* Adjust layout for download button on smaller screens */
+        position: relative;
+        width: fit-content;
+        text-align: center;
     }
-} */
+    .rummytryimg img {
+        width: fit-content; /* Make sure the image fits within its container */
+    }
+}

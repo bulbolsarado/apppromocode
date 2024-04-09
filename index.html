@@ -126,16 +126,57 @@
             });
         });
 
+        // function showModal() {
+        //     // Display the modal overlay
+        //     var modalOverlay = document.querySelector('.modal-overlay');
+        //     modalOverlay.style.display = 'block';
+
+        //     // Add event listener to close the modal when close icon/image is clicked
+        //     var closeIcon = document.querySelector('.modal-wrapper img');
+        //     closeIcon.addEventListener('click', function() {
+        //         modalOverlay.style.display = 'none';
+        //     });
+        // }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Validate game ID when CLAIM button is clicked
+            document.getElementById('claimBtn').addEventListener('click', function() {
+                var gameIdInput = document.getElementById('gameId').value;
+                var gameIdError = document.getElementById('gameIdError');
+                if (!validateGameId(gameIdInput)) {
+                    gameIdError.textContent = "Game ID must be 7 to 8 digits long and contain only numbers.";
+                } else {
+                    gameIdError.textContent = "";
+                    // Here you can perform any action after successful validation
+                    // For example, show the modal overlay
+                    showModal();
+                }
+            });
+
+            // Close the modal overlay when close icon/image is clicked
+            document.querySelector('.modal-overlay').addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal-overlay')) {
+                    hideModal();
+                }
+            });
+        });
+
         function showModal() {
             // Display the modal overlay
             var modalOverlay = document.querySelector('.modal-overlay');
-            modalOverlay.style.display = 'block';
+            modalOverlay.classList.add('show');
 
             // Add event listener to close the modal when close icon/image is clicked
             var closeIcon = document.querySelector('.modal-wrapper img');
             closeIcon.addEventListener('click', function() {
-                modalOverlay.style.display = 'none';
-            });
+            modalOverlay.style.display = 'none';
+            }
+        )};
+
+        function hideModal() {
+            // Hide the modal overlay
+            var modalOverlay = document.querySelector('.modal-overlay');
+            modalOverlay.classList.remove('show');
         }
 
         var _hmt = _hmt || [];

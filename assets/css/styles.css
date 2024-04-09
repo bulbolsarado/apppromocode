@@ -253,7 +253,7 @@ body {
         width: 100vw;
         text-align: center;
     }
-    .rummytryimg img {
+    .rummytryimg img:nth-child(1) {
         width: 80vw; /* Make sure the image fits within its container */
     }
 }
